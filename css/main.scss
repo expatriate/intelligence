@@ -345,12 +345,13 @@ a:not(.no-border):not([data-scribe="element:user_link"]) {
 
 
 .section, .section-d {
-  padding-left: 280px;
-  padding-right: 200px;
+  //padding-left: 280px;
+  //padding-right: 200px;
   width: 100%;
-  max-width: 1800px;
+  //max-width: 1800px;
   position: relative;
   margin: auto;
+  overflow: hidden;
 
   @media screen and (min-width: 1024px) and (max-width: 1400px) {
     padding-left: 200px;
@@ -1884,4 +1885,19 @@ $animDuration: 5s;
 .animated-opacity {
   opacity: 1;
   transition: opacity ease-out 1s;
+}
+
+
+.videobg {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-size: 100% 100%;
+  background-color: black;
+  background-position: center center;
+  background-size: contain;
+  object-fit: cover;
+  z-index: 3;
 }

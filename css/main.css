@@ -2193,3 +2193,19 @@ a:not(.no-border):not([data-scribe="element:user_link"]) {
   opacity: 1;
   -webkit-transition: opacity ease-out 1s;
   transition: opacity ease-out 1s; }
+
+
+.videobg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-size: 100% 100%;
+  background-color: black;
+  background-position: center center;
+  background-size: contain;
+  object-fit: cover;
+  z-index: 3;
+}

@@ -671,12 +671,10 @@ a:not(.no-border):not([data-scribe="element:user_link"]) {
     transition: all 0.6s ease; }
 
 .section, .section-d {
-  padding-left: 280px;
-  padding-right: 200px;
   width: 100%;
-  max-width: 1800px;
   position: relative;
-  margin: auto; }
+  margin: auto;
+  overflow: hidden; }
   @media screen and (min-width: 1024px) and (max-width: 1400px) {
     .section, .section-d {
       padding-left: 200px;
@@ -2193,3 +2191,17 @@ a:not(.no-border):not([data-scribe="element:user_link"]) {
   opacity: 1;
   -webkit-transition: opacity ease-out 1s;
   transition: opacity ease-out 1s; }
+
+.videobg {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 100%;
+  background-size: 100% 100%;
+  background-color: black;
+  background-position: center center;
+  background-size: contain;
+  object-fit: cover;
+  z-index: 3; }
