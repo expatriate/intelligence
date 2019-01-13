@@ -1,4 +1,4 @@
-var directionSlider, productSlider, newsSlider, maxOpened = 0, menuOpened = false;
+var directionSlider, productSlider, newsSlider, maxOpened = 0, menuOpened = false, portfolioOpened = false;
 var resizeTimer;
 
 
@@ -66,12 +66,27 @@ $(document).ready(function() {
       var idx = Math.abs(origin - destination)*.1;
       $.fn.fullpage.setScrollingSpeed(idx*700);
 
-      // Hide SAFMAR logo
-      /*if (!destination.isFirst) {
-        $('#footer').find('a').animate({opacity: 0}, 500, function() { $('#footer').find('a').css({display: 'none'}); });
+
+      if (!destination.isFirst) {
+        $('.go-to-main-image').hide();
+        if (!$('.go-to-main-text').is(':visible')) {
+          $('.go-to-main-text').css({display: 'block', opacity: 0}).animate({opacity: 1}, 500);
+          $('#menu').css({opacity: 0, visibility: 'visible'}).animate({opacity: 1}, 500).removeAttr('style');
+        }
       } else {
-        $('#footer').find('a').css({display: 'block'}).animate({opacity: 1}, 500);
+        $('#menu').css({'visibility': 'hidden'});
+        $('.go-to-main-text').hide();
+        if (!$('.go-to-main-image').is(':visible')) {
+          $('.go-to-main-image').css({display: 'block', opacity: 0}).animate({opacity: 1}, 500);
+        }
       }
+
+      var portfolioOpened = $('body').find('.portfolio-hidden:visible');
+      if (portfolioOpened.length) {
+        portfolioOpened.find('.section-portfolio__close').click();
+      }
+
+      /*
 
       animateBlock(destination.item);
 
@@ -157,7 +172,7 @@ $(document).ready(function() {
   $('#stage').css({width: customHeight, height: customHeight});*/
 
   objectFit.polyfill({
-    selector: 'img', // this can be any CSS selector
+    selector: 'video', // this can be any CSS selector
     fittype: 'cover', // either contain, cover, fill or none
     disableCrossDomain: 'true' // either 'true' or 'false' to not parse external CSS files.
   });
@@ -393,8 +408,6 @@ $(document).ready(function() {
   $('#menu').on('click', function() {
     if (!menuOpened) {
       $('.menu-hidden').css({display:'block'}).animate({opacity: 1}, 200);
-      $.fn.fullpage.setAllowScrolling(false);
-      $('.mouse').hide();
       startMenuAnimation();
       menuOpened = true;
 
@@ -404,10 +417,6 @@ $(document).ready(function() {
       $('.menu-hidden').animate({opacity: 0}, 200, function() {
         $('.menu-hidden').css({display:'none'})
       });
-      if ($.fn.fullpage.getActiveSection().index !== 7) {
-        $.fn.fullpage.setAllowScrolling(true);
-        $('.mouse').show();
-      }
       restoreMenuAnimation();
       menuOpened = false;
 
@@ -415,13 +424,27 @@ $(document).ready(function() {
     }
   });
 
+  $('.section-portfolio__link').on('click', function() {
+    if (!portfolioOpened) {
+      var el = $(this).data('href');
+      $('#'+el).css({display:'block'}).animate({opacity: 1}, 200);
+      portfolioOpened = true;
+    }
+  });
+
+  $('.section-portfolio__close').on('click', function() {
+    var el = $(this).data('href');
+    $('#'+el).animate({opacity: 0}, 200, function() {
+      $('#'+el).css({display:'none'})
+    });
+    
+    portfolioOpened = false;
+  });
+
   $('.menu-hidden__close').on('click', function() {
     $('.menu-hidden').animate({opacity: 0}, 200, function() {
       $('.menu-hidden').css({display:'none'})
     });
-    if ($.fn.fullpage.getActiveSection().index !== 7) {
-      $('.mouse').show();
-    }
     restoreMenuAnimation();
     menuOpened = false;
 

@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/vendor.main.css">
-    <!-- <link rel="stylesheet" href="dist/css/main.css"> -->
+    <!-- <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/vendor.main.css"> -->
+    <link rel="stylesheet" href="dist/css/main.css">
     <script src="js/vendor.min.js"></script>
     <script data-cfasync="false" src="js/form-submit-handler.js"></script>
 
@@ -18,14 +18,17 @@
         <!-- <div class="follower mobile-hidden" id="foolower"></div> -->
         <div id="header">
 
-            <div id="menu" class="menu">
+            <div id="menu" class="menu" style="visibility: hidden">
                 <div class="menu__inside">
                 </div>
             </div>
 
-            <a href="#main" class="go-to-main no-border">
+            <a href="#main" class="go-to-main go-to-main-image no-border">
                 <div style="background:url('img/logo.svg') no-repeat">
                 </div>
+            </a>
+            <a href="#main" class="go-to-main go-to-main-text no-border" style="display: none;">
+                INTELLIGENCE
             </a>
         </div>
 
@@ -39,11 +42,14 @@
 
         <div id="footer">
             <div class="copy mobile-hidden">
-                &copy; 2018
+                &copy; 2019
             </div>
         </div>
 
         <div class="section section-main">
+            <video id="video_0" class="videobg" loop="" muted="" data-autoplay="">
+                <source src="video/main.mp4" type="video/mp4">
+            </video>
             <div class="section__overlay">
             </div>
             <div class="section__wrapper">
@@ -95,7 +101,7 @@
                     Календари<br>
                 </div>
                 <div class="section-portfolio">
-                    <a class="section-portfolio__link" href="">
+                    <a class="section-portfolio__link" data-href="designportfolio">
                         PORTFOLIO
                     </a>
                 </div>
@@ -131,7 +137,7 @@
                     Поддержка и развитие<br>
                 </div>
                 <div class="section-portfolio">
-                    <a class="section-portfolio__link" href="">
+                    <a class="section-portfolio__link" data-href="codingportfolio">
                         PORTFOLIO
                     </a>
                 </div>
@@ -163,7 +169,7 @@
                     Решения<br>
                 </div>
                 <div class="section-portfolio">
-                    <a class="section-portfolio__link" href="">
+                    <a class="section-portfolio__link" data-href="digitalportfolio">
                         PORTFOLIO
                     </a>
                 </div>
@@ -199,7 +205,7 @@
                     Собственная база промоутеров и блогеров.<br>
                 </div>
                 <div class="section-portfolio">
-                    <a class="section-portfolio__link" href="">
+                    <a class="section-portfolio__link" data-href="consultingportfolio">
                         PORTFOLIO
                     </a>
                 </div>
@@ -231,7 +237,7 @@
                     Среди последних проектов Анимир-студии такие мультфильмы, как “Моки” и “Занимательная география”.<br>
                 </div>
                 <div class="section-portfolio">
-                    <a class="section-portfolio__link" href="">
+                    <a class="section-portfolio__link" data-href="animationportfolio">
                         PORTFOLIO
                     </a>
                 </div>
@@ -249,19 +255,49 @@
                     <a class="menu-link" touch-action="none" href="#coding">coding</a>
                     <a class="menu-link" touch-action="none" href="#design">design</a>
                 </div>
-                <!-- <div class="menu-hidden__wrapper">
-                    <div class="menu-hidden__menu">
-                        <div class="menu-hidden__items">
-                            
-                        </div>
-                    </div>
-                </div> -->
-                <!-- <div class="menu-hidden__close hoverable">
-                    X
-                </div> -->
              </div>
         </div>
     </div>
+
+
+    <div class="portfolio-hidden" id="designportfolio">
+        <div class="section-black section__wrapper">
+            <div class="section-title">
+                <div class="section-title__text">
+                    DESIGN
+                    <span class="section-title__subtext">
+                        PORTFOLIO
+                    </span>
+                </div>
+                <span  data-href="designportfolio" class="section-title__close section-portfolio__close">
+                    <div class="section-title__close-icon">
+                    </div>
+                    CLOSE
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-hidden" id="codingportfolio">
+        codingportfolio
+        <span class="section-portfolio__close" data-href="codingportfolio">CLOSE</span>
+    </div>
+
+    <div class="portfolio-hidden" id="digitalportfolio">
+        digitalportfolio
+        <span class="section-portfolio__close" data-href="digitalportfolio">CLOSE</span>
+    </div>
+
+    <div class="portfolio-hidden" id="consultingportfolio">
+        consultingportfolio
+        <span class="section-portfolio__close" data-href="consultingportfolio">CLOSE</span>
+    </div>
+
+    <div class="portfolio-hidden" id="animationportfolio">
+        animationportfolio
+        <span class="section-portfolio__close" data-href="animationportfolio">CLOSE</span>
+    </div>
+
 
     <div class="mail-hidden">
         <div class="mail-hidden__container">
@@ -277,12 +313,9 @@
                     </div>
                     <div class="section-text__wrapper">
                         <div class="section-text js-animate-show">
-                            <!-- [FORM_TEXT] -->
                             you are welcome to express your ideas or plans for cooperation with us in no particular format.
-                            <!-- [FORM_TEXT] -->
                         </div>
                     </div>
-                    <!-- [FORM_EMAIL] -->
                     <form method="POST" class="gform" data-email="expatriate@inbox.ru" action="https://script.google.com/macros/s/AKfycbwXwjSfWWHfUyjmb-wlRjg3jwqX3MDzZCUDzHyhLg/exec">
                         <div style="display: none" id="thankyou_message" class="thankyou_message">
                             <h2>

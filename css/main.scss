@@ -28,7 +28,7 @@ body, html {
   display: flex;
   align-items: center;
   a div {
-    width: 116px;
+    width: 50px;
     height: 42px;
   }
   @media screen and (min-width: 1024px) and (max-width: 1400px) {
@@ -74,9 +74,9 @@ body, html {
 .menu {
   left: 90px;
   z-index: 99999;
-  padding: 30px;
+  margin: 30px;
   border-radius: 100%;
-  //cursor: pointer;
+  cursor: pointer;
   width: 14px;
   height: 14px;
 
@@ -315,8 +315,6 @@ body, html {
 } */
 
 .section-main {
-  background-image: url('../img/mainpagebg.jpg');
-
 
   &__link {
     font-family: 'FuturaBold';
@@ -356,7 +354,7 @@ body, html {
 }
 
 
-.section, .section-d {
+.section, .section-d, .section-black {
   //padding-left: 280px;
   //padding-right: 200px;
   width: 100%;
@@ -392,11 +390,13 @@ body, html {
   &__wrapper {
     padding-left: 170px;
     padding-right: 120px;
+    padding-top: 120px;
+    padding-bottom: 120px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
     position: relative;
+    height: 100%;
+    box-sizing: border-box;
     z-index: 2;
   }
 
@@ -421,6 +421,10 @@ body, html {
     &__slider {
     }
   }
+}
+
+.section-black {
+  background-color: #000000;
 }
 
 .section-d {
@@ -808,12 +812,18 @@ body, html {
   @media screen and (max-width: 720px) and (max-height: 500px) {
     margin-bottom: 12px;
   }
+
+  &__subtext {
+    font-size: 40px;
+    margin: 12px 0px 0px 30px;
+  }
   
   &__text {
     font-size: 120px;
     font-family: 'FuturaBold';
     color: #ffffff;
     line-height: 1;
+    display: flex;
     
     /* @media screen and (min-width: 1200px) {
       font-size: 6.75vh;
@@ -958,7 +968,8 @@ body, html {
 }
 
 .section-portfolio {
-  margin-left: 20px;
+  position: absolute;
+  bottom: 120px;
 
   &__link {
     font-family: 'FuturaBold';
@@ -970,6 +981,7 @@ body, html {
     text-decoration: none;
     color: #ffffff;
     position: relative;
+    cursor: pointer;
     &:after {
       content: '';
       position: absolute;
@@ -1353,7 +1365,7 @@ body, html {
   }
 }
 
-.mail-hidden, .menu-hidden {
+.mail-hidden, .menu-hidden, .portfolio-hidden {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -1362,7 +1374,6 @@ body, html {
   opacity: 0;
   top: 0;
   left: 0;
-  z-index: 9999;
 
   &__container {
     display: flex;
@@ -1401,6 +1412,18 @@ body, html {
       //transition: all .5s ease;
     }
   }
+}
+
+.portfolio-hidden {
+  z-index: 99;
+}
+
+.menu-hidden {
+  z-index: 101;
+}
+
+.mail-hidden {
+  z-index: 100
 }
 
 .menu-hidden {
@@ -1483,11 +1506,23 @@ body, html {
   touch-action: none;
   display: inline-block;
 }
+.go-to-main-text {
+  touch-action: none;
+  display: inline-block;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'FuturaMedium';
+
+  &:hover, &:active, &:visited {
+    color: #ffffff
+  }
+}
 .menu-link {
   //position: absolute;
   text-decoration: none;
-  font-family: 'LatoBold';
-  font-size: 30px;
+  font-family: 'FuturaBold';
+  font-size: 46px;
+  text-transform: uppercase;
   color: #3e3e3e;
   touch-action: none;
 
