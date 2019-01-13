@@ -15,140 +15,226 @@
 </head>
 <body>
     <div id="fullpage">
-        <div class="follower mobile-hidden" id="foolower"></div>
-        <!-- <div class="mouse-wrapper mobile-hidden" id="mouse">
-            <div class="mouse"></div>
-        </div> -->
+        <!-- <div class="follower mobile-hidden" id="foolower"></div> -->
         <div id="header">
+
+            <div id="menu" class="menu">
+                <div class="menu__inside">
+                </div>
+            </div>
+
             <a href="#main" class="go-to-main no-border">
                 <div style="background:url('img/logo.svg') no-repeat">
                 </div>
             </a>
         </div>
-        <div id="menu" class="menu hoverable">
-            <div class="menu__inside hoverable">
+
+        <div class="mail">
+            CONTACT
+        </div>
+
+        <div class="share">
+            SOCIAL
+        </div>
+
+        <div id="footer">
+            <div class="copy mobile-hidden">
+                &copy; 2018
             </div>
         </div>
 
-        <!-- MAIL BLOCK -->
-        <div class="mail hoverable">
-            <svg class="hoverable" version="1.1" id="mail-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="27px" height="20px" viewBox="0 0 27 20" enable-background="new 0 0 27 20" xml:space="preserve">
-                <g opacity="0.1744" enable-background="new    ">
-                    <g>
-                        <defs>
-                            <rect id="SVGID_1_" width="28" height="20"/>
-                        </defs>
-                        <clipPath id="SVGID_2_">
-                            <use xlink:href="#SVGID_1_"  overflow="visible"/>
-                        </clipPath>
-                        <g clip-path="url(#SVGID_2_)">
-                            <defs>
-                                <path id="SVGID_3_" d="M17.765,10.248L26.1,1.592v16.945L17.765,10.248z M9.87,10.907l2.485,2.581
-                                    c0.319,0.307,0.729,0.462,1.14,0.462c0.416,0,0.833-0.158,1.162-0.475l2.473-2.568l8.207,8.162H1.659L9.87,10.907z
-                                     M9.236,10.248L0.9,18.537V1.592L9.236,10.248z M16.481,10.263l-2.451,2.545c-0.298,0.286-0.764,0.285-1.049,0.012l-2.463-2.557
-                                    l0.022-0.022L1.641,0.93h23.723l-8.904,9.311L16.481,10.263z M0,0v1.065v17.869V20h27v-1.065V1.065V0H0z"/>
-                            </defs>
-                            <clipPath id="SVGID_4_">
-                                <use xlink:href="#SVGID_3_"  overflow="visible"/>
-                            </clipPath>
-                            <g clip-path="url(#SVGID_4_)">
-                                <defs>
-                                    <rect id="SVGID_5_" width="27" height="20"/>
-                                </defs>
-                                <clipPath id="SVGID_6_">
-                                    <use xlink:href="#SVGID_5_"  overflow="visible"/>
-                                </clipPath>
-                                <rect x="-5" y="-5" clip-path="url(#SVGID_6_)" width="37" height="30"/>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-            </svg>
-        </div>
-
-        <!-- [SHARE_BLOCK] -->
-        <div class="share hoverable">
-            <svg version="1.1" class="hoverable" id="share-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="24px" height="26px" viewBox="0 0 24 26" enable-background="new 0 0 24 26" xml:space="preserve">
-                <g opacity="0.1859" enable-background="new    ">
-                    <g>
-                        <defs>
-                            <rect id="SVGID_1_1" width="24" height="26"/>
-                        </defs>
-                        <clipPath id="SVGID_2_1">
-                            <use xlink:href="#SVGID_1_1"  overflow="visible"/>
-                        </clipPath>
-                        <g clip-path="url(#SVGID_2_1)">
-                            <defs>
-                                <path id="SVGID_3_1" d="M22.104,24.088c-1.361,1.375-3.575,1.375-4.937,0c-0.659-0.666-1.022-1.552-1.022-2.493
-                                    s0.363-1.827,1.022-2.493c0.681-0.688,1.574-1.03,2.469-1.03c0.894,0,1.787,0.343,2.468,1.03
-                                    c0.66,0.666,1.022,1.552,1.022,2.493S22.765,23.422,22.104,24.088z M4.364,16.508c-1.924,0-3.491-1.582-3.491-3.526
-                                    c0-1.944,1.566-3.526,3.491-3.526c1.925,0,3.491,1.582,3.491,3.526C7.855,14.926,6.289,16.508,4.364,16.508z M19.637,0.881
-                                    c1.925,0,3.49,1.582,3.49,3.526s-1.565,3.526-3.49,3.526s-3.491-1.582-3.491-3.526S17.711,0.881,19.637,0.881z M16.551,18.479
-                                    c-0.229,0.231-0.425,0.485-0.596,0.754l-7.54-4.623c0.2-0.504,0.313-1.053,0.313-1.627c0-0.575-0.113-1.124-0.312-1.628
-                                    l7.542-4.587c0.774,1.229,2.132,2.048,3.679,2.048C22.043,8.814,24,6.837,24,4.407S22.043,0,19.637,0s-4.364,1.977-4.364,4.407
-                                    c0,0.553,0.106,1.082,0.291,1.57l-7.552,4.594C7.232,9.37,5.889,8.575,4.364,8.575C1.958,8.575,0,10.552,0,12.982
-                                    s1.958,4.407,4.364,4.407c1.525,0,2.868-0.795,3.648-1.996l7.551,4.629c-0.188,0.496-0.29,1.026-0.29,1.573
-                                    c0,1.178,0.454,2.284,1.278,3.116C17.401,25.57,18.519,26,19.636,26c1.118,0,2.235-0.43,3.086-1.289
-                                    C23.546,23.879,24,22.772,24,21.595c0-1.177-0.454-2.284-1.278-3.116C21.021,16.76,18.252,16.76,16.551,18.479z"/>
-                            </defs>
-                            <clipPath id="SVGID_4_1">
-                                <use xlink:href="#SVGID_3_1"  overflow="visible"/>
-                            </clipPath>
-                            <g clip-path="url(#SVGID_4_1)">
-                                <defs>
-                                    <rect id="SVGID_5_1" width="24" height="26"/>
-                                </defs>
-                                <clipPath id="SVGID_6_1">
-                                    <use xlink:href="#SVGID_5_1"  overflow="visible"/>
-                                </clipPath>
-                                <rect x="-5" y="-5" clip-path="url(#SVGID_6_1)" width="34" height="36"/>
-                            </g>
-                        </g>
-                    </g>
-                </g>
-                </svg>
-        </div>
-        <!-- [SHARE_BLOCK] -->
         <div class="section section-main">
-            <a touch-action="none" href="#main">Main</a>
-            <a touch-action="none" href="#consulting">consulting</a>
-            <a touch-action="none" href="#digital">digital</a>
-            <a touch-action="none" href="#animation">animation</a>
-            <a touch-action="none" href="#coding">coding</a>
-            <a touch-action="none" href="#design">design</a>
+            <div class="section__overlay">
+            </div>
+            <div class="section__wrapper">
+                <div class="section-main__link-wrap">
+                    <a class="section-main__link" touch-action="none" href="#design">design</a>
+                </div>
+                <div class="section-main__link-wrap">
+                    <a class="section-main__link" touch-action="none" href="#coding">coding</a>
+                </div>
+                <div class="section-main__link-wrap">
+                    <a class="section-main__link" touch-action="none" href="#digital">digital</a>
+                </div>
+                <div class="section-main__link-wrap">
+                    <a class="section-main__link" touch-action="none" href="#consulting">consulting</a>
+                </div>
+                <div class="section-main__link-wrap">
+                    <a class="section-main__link" touch-action="none" href="#animation">animation</a>
+                </div>
+            </div>
         </div>
         <div class="section section-design">
             <video id="video_1" class="videobg" loop="" muted="" data-autoplay="">
                 <source src="video/design.mp4" type="video/mp4">
             </video>
+            <div class="section__overlay">
+            </div>
+            <div class="section__wrapper">
+                <div class="section-title">
+                    <div class="section-title__text">
+                        DESIGN
+                    </div>
+                    <a href="#main" class="section-title__close">
+                        <div class="section-title__close-icon">
+                        </div>
+                        CLOSE
+                    </a>
+                </div>
+                <div class="section-text section-text--pad-bot">
+                    Работаем над визуальной составляющей ваших маркетинговых материалов. Формируем стратегию продвижения и доносим ключевые идеи до конечного потребителя. Решаем как отдельные задачи дизайна, так и комплексную разработку (под ключ) фирменного стиля и построения сильного бренда для доминирования на рынке.
+                </div>
+                <div class="section-text section-text__small section-text--pad-bot">
+                    Годовые отчеты<br>
+                    Презентации (печатные и видео)<br>
+                    Айдентика<br>
+                    Сувенирный дизайн и реализация<br>
+                    Буклеты и каталоги<br>
+                    Корпоративный брендинг<br>
+                    Корпоративные подарки<br>
+                    Календари<br>
+                </div>
+                <div class="section-portfolio">
+                    <a class="section-portfolio__link" href="">
+                        PORTFOLIO
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="section section-coding">
             <video id="video_2" class="videobg" loop="" muted="" data-autoplay="">
                 <source src="video/coding.mp4" type="video/mp4">
             </video>
+            <div class="section__overlay">
+            </div>
+            <div class="section__wrapper">
+                <div class="section-title">
+                    <div class="section-title__text">
+                        CODING
+                    </div>
+                    <a href="#main" class="section-title__close">
+                        <div class="section-title__close-icon">
+                        </div>
+                        CLOSE
+                    </a>
+                </div>
+                <div class="section-text section-text--pad-bot">
+                    Комплексная веб-разработка и разработка мобильных приложений.<br>
+                    Разрабатываем системы любого уровня сложности, которые помогают бизнесу расширять свою деятельность и повышать уровень прибыли. Подбираем эффективные решения как для быстрого запуска стартапов, так и для оптимизации уже существующего бизнеса. Формируем стратегию устойчивого развития и продвижения вашей компании в цифровом пространстве. 
+                </div>
+                <div class="section-text section-text__small section-text--pad-bot">
+                    Веб-сервисы<br>
+                    Мобильные приложения<br>
+                    Интернет-магазины<br>
+                    Корпоративные сайты<br>
+                    Быстрые решения<br>
+                    Поддержка и развитие<br>
+                </div>
+                <div class="section-portfolio">
+                    <a class="section-portfolio__link" href="">
+                        PORTFOLIO
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="section section-digital">
             <video id="video_3" class="videobg" loop="" muted="" data-autoplay="">
                 <source src="video/digital.mp4" type="video/mp4">
             </video>
+            <div class="section__overlay">
+            </div>
+            <div class="section__wrapper">
+                <div class="section-title">
+                    <div class="section-title__text">
+                        DIGITAL
+                    </div>
+                    <a href="#main" class="section-title__close">
+                        <div class="section-title__close-icon">
+                        </div>
+                        CLOSE
+                    </a>
+                </div>
+                <div class="section-text section-text--pad-bot">
+                    Комплексная веб-разработка и разработка мобильных приложений.<br>
+                    Разрабатываем системы любого уровня сложности, которые помогают бизнесу расширять свою деятельность и повышать уровень прибыли. Подбираем эффективные решения как для быстрого запуска стартапов, так и для оптимизации уже существующего бизнеса. Формируем стратегию устойчивого развития и продвижения вашей компании в цифровом пространстве.
+                </div>
+                <div class="section-text section-text__small section-text--pad-bot">
+                    Решения<br>
+                </div>
+                <div class="section-portfolio">
+                    <a class="section-portfolio__link" href="">
+                        PORTFOLIO
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="section section-consulting">
             <video id="video_4" class="videobg" loop="" muted="" data-autoplay="">
                 <source src="video/consulting.mp4" type="video/mp4">
             </video>
+            <div class="section__overlay">
+            </div>
+            <div class="section__wrapper">
+                <div class="section-title">
+                    <div class="section-title__text">
+                        CONSULTING
+                    </div>
+                    <a href="#main" class="section-title__close">
+                        <div class="section-title__close-icon">
+                        </div>
+                        CLOSE
+                    </a>
+                </div>
+                <div class="section-text section-text__small section-text__opacity section-text--pad-bot">
+                    С.А.М. Консалтинг<br>
+                    Социология, аналитика, мониторинг + консалтинг услуги<br>
+                    <br>
+                    Предлагаем проведение исследований общественного мнения в онлайн и оффлайн форматах, качественный мониторинг сми, блогосферы с оценкой лояльности и цитируемости. По результатам исследований формируются аналитические выводы и предложения по развитию, разрабатываются стратегии и разовые акции.<br>
+                    Богатый опыт работы с имиджем, продвижение персоналий и брендов, интернет-сопровождение и SMM.<br>
+                    Помимо поддержки тех или иных лиц и проектов, неоднократно занимались контрмероприятиями и кампаниями против оппонентов и конкурентов.<br>
+                    Среди предлагаемых услуг – работа со СМИ: анонсирование, организация пресс-конференций и пресс-туров, репортажи, распространение информации, размещение в СМИ любого уровня.<br>
+                    Богатый опыт работы в коммерческой рекламе и в политической сфере.<br>
+                    Собственная база промоутеров и блогеров.<br>
+                </div>
+                <div class="section-portfolio">
+                    <a class="section-portfolio__link" href="">
+                        PORTFOLIO
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="section section-animation">
             <video id="video_5" class="videobg" loop="" muted="" data-autoplay="">
                 <source src="video/animation.mp4" type="video/mp4">
             </video>
-        </div>
-
-        <div id="footer">
-            <div class="copy mobile-hidden">
-                &copy; 2018, Blockchain Solutions
+            <div class="section__overlay">
+            </div>
+            <div class="section__wrapper">
+                <div class="section-title">
+                    <div class="section-title__text">
+                        ANIMATION
+                    </div>
+                    <a href="#main" class="section-title__close">
+                        <div class="section-title__close-icon">
+                        </div>
+                        CLOSE
+                    </a>
+                </div>
+                <div class="section-text section-text--pad-bot">
+                    Анимир-студия занимается полным циклом производства анимационных сериалов и полнометражных фильмов.&nbsp;В студии работают профессиональные режиссеры, иллюстраторы, мультипликаторы, риггеры и другие&nbsp;специалисты.<br>
+                    <br>
+                    Основная концепция заключается в производстве мультипликационной продукции в любой технологии (компьютерная анимация, классическая анимация, совмещенные технологии, 3D, VR).<br>
+                    <br>
+                    Среди последних проектов Анимир-студии такие мультфильмы, как “Моки” и “Занимательная география”.<br>
+                </div>
+                <div class="section-portfolio">
+                    <a class="section-portfolio__link" href="">
+                        PORTFOLIO
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -156,19 +242,20 @@
     <div class="menu-hidden">
         <div class="menu-hidden__container">
              <div class="section section-menu">
-                <div class="menu-hidden__wrapper">
+                <div class="section__wrapper menu-hidden__items">
+                    <a class="menu-link" touch-action="none" href="#consulting">consulting</a>
+                    <a class="menu-link" touch-action="none" href="#digital">digital</a>
+                    <a class="menu-link" touch-action="none" href="#animation">animation</a>
+                    <a class="menu-link" touch-action="none" href="#coding">coding</a>
+                    <a class="menu-link" touch-action="none" href="#design">design</a>
+                </div>
+                <!-- <div class="menu-hidden__wrapper">
                     <div class="menu-hidden__menu">
-                        <img src="img/menu.png">
                         <div class="menu-hidden__items">
-                            <a class="menu-link menu-link__main" touch-action="none" href="#main">Main</a>
-                            <a class="menu-link menu-link__about" touch-action="none" href="#consulting">consulting</a>
-                            <a class="menu-link menu-link__news" touch-action="none" href="#digital">digital</a>
-                            <a class="menu-link menu-link__product" touch-action="none" href="#animation">animation</a>
-                            <a class="menu-link menu-link__directions" touch-action="none" href="#coding">coding</a>
-                            <a class="menu-link menu-link__team" touch-action="none" href="#design">design</a>
+                            
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- <div class="menu-hidden__close hoverable">
                     X
                 </div> -->
@@ -179,58 +266,55 @@
     <div class="mail-hidden">
         <div class="mail-hidden__container">
             <div class="section" id="write-to-us">
-                <div class="section-title no-a section-title--no-pad">
-                    <div class="section-title__image no-a section-title__image--small-pad">
-                        <img src="img/write-to-us.png">
+                <div class="section__wrapper">
+                    <div class="section-title no-a section-title--no-pad">
+                        <div class="section-title__text section-title__text--black no-a">
+                            Write to us -
+                        </div>
+                        <div class="mail-hidden__close hoverable">
+                            X
+                        </div>
                     </div>
-                    <div class="section-title__text no-a">
-                        <!-- [FORM_TITLE] -->
-                        Write to us -
-                        <!-- [FORM_TITLE] -->
+                    <div class="section-text__wrapper">
+                        <div class="section-text js-animate-show">
+                            <!-- [FORM_TEXT] -->
+                            you are welcome to express your ideas or plans for cooperation with us in no particular format.
+                            <!-- [FORM_TEXT] -->
+                        </div>
                     </div>
-                    <div class="mail-hidden__close hoverable">
-                        X
-                    </div>
+                    <!-- [FORM_EMAIL] -->
+                    <form method="POST" class="gform" data-email="expatriate@inbox.ru" action="https://script.google.com/macros/s/AKfycbwXwjSfWWHfUyjmb-wlRjg3jwqX3MDzZCUDzHyhLg/exec">
+                        <div style="display: none" id="thankyou_message" class="thankyou_message">
+                            <h2>
+                                <!-- [FORM_SUCCESS] -->
+                                Thanks, for contacting us!
+                                <!-- [FORM_SUCCESS] -->
+                            </h2>
+                        </div>
+                        <div class="form-elements">
+                            <div class="inputs-wrapper">
+                                <div class="js-animate-show-input input-holder">
+                                    <input type="text" name="name" placeholder="Name">
+                                    <div class="input-holder-line"></div>
+                                </div>
+                                <div class="js-animate-show-input input-holder">
+                                    <input type="email" name="email" placeholder="E-mail">
+                                    <div class="input-holder-line"></div>
+                                </div>
+                                <div class="js-animate-show-input input-holder">
+                                    <input type="text" name="subject" placeholder="Subject">
+                                    <div class="input-holder-line"></div>
+                                </div>
+                            </div>
+                            <div class="textarea-wrapper">
+                                <textarea name="message" class="js-animate-show-textarea animated-top" placeholder="Your message"></textarea>
+                            </div>
+                            <div class="submit-wrapper form-elements">
+                                <input type="submit" class="js-animate-show-submit animated-top" name="" value="Send">
+                            </div>
+                        </div>
+                    </form>
                 </div>
-                <div class="section-text__wrapper">
-                    <div class="section-text js-animate-show">
-                        <!-- [FORM_TEXT] -->
-                        you are welcome to express your ideas or plans for cooperation with us in no particular format.
-                        <!-- [FORM_TEXT] -->
-                    </div>
-                </div>
-                <!-- [FORM_EMAIL] -->
-                <form method="POST" class="gform" data-email="expatriate@inbox.ru" action="https://script.google.com/macros/s/AKfycbwXwjSfWWHfUyjmb-wlRjg3jwqX3MDzZCUDzHyhLg/exec">
-                    <div style="display: none" id="thankyou_message" class="thankyou_message">
-                        <h2>
-                            <!-- [FORM_SUCCESS] -->
-                            Thanks, for contacting us!
-                            <!-- [FORM_SUCCESS] -->
-                        </h2>
-                    </div>
-                    <div class="form-elements">
-                        <div class="inputs-wrapper">
-                            <div class="js-animate-show-input input-holder">
-                                <input type="text" name="name" placeholder="Name">
-                                <div class="input-holder-line"></div>
-                            </div>
-                            <div class="js-animate-show-input input-holder">
-                                <input type="email" name="email" placeholder="E-mail">
-                                <div class="input-holder-line"></div>
-                            </div>
-                            <div class="js-animate-show-input input-holder">
-                                <input type="text" name="subject" placeholder="Subject">
-                                <div class="input-holder-line"></div>
-                            </div>
-                        </div>
-                        <div class="textarea-wrapper">
-                            <textarea name="message" class="js-animate-show-textarea animated-top" placeholder="Your message"></textarea>
-                        </div>
-                        <div class="submit-wrapper form-elements">
-                            <input type="submit" class="js-animate-show-submit animated-top" name="" value="Send">
-                        </div>
-                    </div>
-                </form>
             </div>
         </div>
     </div>

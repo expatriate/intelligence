@@ -52,14 +52,14 @@ $(document).ready(function() {
   }*/
 
   $('#fullpage').fullpage({
-    menu: '#menu',
+    //menu: '#menu',
     keyboardScrolling: false,
-    fixedElements: '#menu, #header, #footer, .mail, .share, .follower, #mouse',
+    fixedElements: '#header, #footer, .mail, .share, .follower',
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     anchors:['main', 'design', 'coding', 'digital', 'consulting', 'animation',],
     recordHistory: false,
     scrollHorizontally: false,
-    slideSelector: '.horizontal-scrolling',
+    //slideSelector: '.horizontal-scrolling',
 
     onLeave: function(origin, destination, direction) {
 
@@ -560,12 +560,12 @@ $(document).ready(function() {
   $(document).on('click', 'a', function(e) {
     if ($(e.target).hasClass('menu-link') && !$(e.target).hasClass('menu-link__contacts')) {
 
-      setTimeout(function() {
+      /*setTimeout(function() {
         if ($.fn.fullpage.getActiveSection().index !== 7) {
           $.fn.fullpage.setAllowScrolling(true);
           $('.mouse').show();
         }
-      }, 500)
+      }, 500)*/
     }
 
     if ($(e.target).parent().hasClass('go-to-main')) {
@@ -575,22 +575,22 @@ $(document).ready(function() {
   });
   
   if ($(window).width() > 1024) {
-    stickyElements('.menu-hidden__close, .mail-hidden__close, .menu, .mail, .share', {stickiness: 5});
+    //stickyElements('.menu-hidden__close, .mail-hidden__close, .menu, .mail, .share', {stickiness: 5});
     $('.js-animate-show, .twitter-link__container').addClass('not-animated');
     $('.section-title__image:not(.no-a)').addClass('not-animated-opacity');
 
-    $(window).on('mouseover', mouseOver);
+    /*$(window).on('mouseover', mouseOver);
     $(window).on('mouseout', mouseOut);
-    $(window).on('mousemove', moveCursor);
+    $(window).on('mousemove', moveCursor);*/
   }
 
-  init();
+  //init();
 
   //methods
   //$.fn.fullpage.setAllowScrolling(false);
 });
 
-var $cursor = $('.follower');
+/*var $cursor = $('.follower');
 var isEdEgde = Swiper.browser.isIE || Swiper.browser.isEdge ? true : false;
 if (isEdEgde) {
   $('html').addClass('is-ie is-edge');
@@ -614,10 +614,10 @@ function mouseOut(e) {
       $cursor.removeClass('is-hidden');
     }
   }
-}
+}*/
 
 
-
+/*
 function onMouseMove( event ) {
   mouse.x = ( ( event.clientX - webGLRenderer.domElement.offsetLeft ) / webGLRenderer.domElement.width ) * 2 - 1;
   mouse.y = - ( ( event.clientY - webGLRenderer.domElement.offsetTop ) / webGLRenderer.domElement.height ) * 2 + 1;
@@ -641,4 +641,4 @@ function onMouseDown( event ) {
 
 }
 function onWindowResize() {
-}
+}*/
