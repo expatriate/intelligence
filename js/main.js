@@ -53,12 +53,12 @@ $(document).ready(function() {
 
   $('#fullpage').fullpage({
     //menu: '#menu',
-    keyboardScrolling: false,
+    //keyboardScrolling: false,
     fixedElements: '#header, #footer, .mail, .share, .follower',
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     anchors:['main', 'design', 'coding', 'digital', 'consulting', 'animation',],
     recordHistory: false,
-    scrollHorizontally: false,
+    //scrollHorizontally: false,
     //slideSelector: '.horizontal-scrolling',
 
     onLeave: function(origin, destination, direction) {
@@ -85,76 +85,10 @@ $(document).ready(function() {
       if (portfolioOpened.length) {
         portfolioOpened.find('.section-portfolio__close').click();
       }
-
-      /*
-
-      animateBlock(destination.item);
-
-
-      if (destination.index == 1) {
-        if (maxOpened < 1) {
-          maxOpened = 1;
-        }
-      }
-
-      // Tweets section
-      if (destination.index == 2) {
-        if (maxOpened < 2) {
-          //newsSlider.autoplay.start();
-          maxOpened = 2;
-        }
-      }
-
-      // Product section
-      if (destination.index == 3) {
-        if (maxOpened < 3) {
-          if (productSlider) {
-            productSlider.autoplay.start();
-          }
-          maxOpened = 3;
-        }
-      }
-
-      // Directions section
-      if (destination.index == 4) {
-
-        if (maxOpened < 4) {
-          if (directionSlider) {
-            directionSlider.autoplay.start();
-          }
-          maxOpened = 4;
-        }
-      }
-
-      // Red/Grey section
       
-      if (destination.index == 5) {
-        if (maxOpened < 5) {
-          startTeamAnimation();
-          maxOpened = 5;
-        }
-      }
-
-      // Team section
-      
-      if (destination.index == 6) {
-        if (maxOpened < 6) {
-          startTeamQuadAnimation();
-          maxOpened = 6;
-        }
-      }
-
-
-      // Disable scroll on last slide
-      if (destination.isLast) {
-        $.fn.fullpage.setAllowScrolling(false);
-        $('.mouse').hide();
-      }*/
     },
     afterRender: function(){
-      /*if (window.innerWidth > 720) {
-        //renderteamQuadsGrid();
-      }*/
+      //$('body').bind('touchmove', function(e){e.preventDefault()}); 
     }
   });
 
@@ -387,7 +321,6 @@ $(document).ready(function() {
 
   $('.mail').on('click', function() {
     $('.mail-hidden').css({display:'block'}).animate({opacity: 1}, 200);
-    $.fn.fullpage.setAllowScrolling(false);
     $('.thankyou_message').css({'display': 'none'});
     $('.form-elements').css({'display': 'block'});
     
@@ -530,9 +463,6 @@ $(document).ready(function() {
     $('#header').removeAttr('style');
     $('#footer').removeAttr('style');
 
-    if ($.fn.fullpage.getActiveSection().index !== 7) {
-      $.fn.fullpage.setAllowScrolling(true);
-    }
   }
 
   function animateBlock(block) {
@@ -593,9 +523,6 @@ $(document).ready(function() {
       submit.addClass('animated-top');
     }, 500);
 
-    if ($.fn.fullpage.getActiveSection().index !== 7) {
-      $.fn.fullpage.setAllowScrolling(true);
-    }
 
     $('#menu').show(200);
   }
@@ -610,11 +537,6 @@ $(document).ready(function() {
           $('.mouse').show();
         }
       }, 500)*/
-    }
-
-    if ($(e.target).parent().hasClass('go-to-main')) {
-      $.fn.fullpage.setAllowScrolling(true);
-      $('.mouse').show();
     }
   });
   
