@@ -429,8 +429,24 @@ $(document).ready(function() {
       var el = $(this).data('href');
       $('#'+el).css({display:'block'}).animate({opacity: 1}, 200);
       portfolioOpened = true;
+
+      startSwiper(el);
     }
   });
+
+  function startSwiper(el) {
+    var mySwiper = document.querySelector('.'+el).swiper;
+    if (!mySwiper) {
+      var swiper = new Swiper('.'+el, {
+        slidesPerView: 2,
+        spaceBetween: 5,
+        scrollbar: {
+          el: '.'+el+'__scrollbar',
+          hide: false,
+        },
+      });
+    }
+  }
 
   $('.section-portfolio__close').on('click', function() {
     var el = $(this).data('href');
@@ -611,6 +627,7 @@ $(document).ready(function() {
 
   //methods
   //$.fn.fullpage.setAllowScrolling(false);
+
 });
 
 /*var $cursor = $('.follower');
