@@ -444,6 +444,11 @@ $(document).ready(function() {
           el: '.'+el+'__scrollbar',
           hide: false,
         },
+        breakpoints: {
+          720: {
+            slidesPerView: 1,
+          }
+        },
       });
     }
   }
