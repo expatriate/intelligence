@@ -54,10 +54,11 @@ $(document).ready(function() {
   $('#fullpage').fullpage({
     //menu: '#menu',
     //keyboardScrolling: false,
-    fixedElements: '#header, #footer, .mail, .share, .follower',
+    fixedElements: '#header, #footer, .mail, .share, .follower, #startoverlay',
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
     anchors:['main', 'design', 'coding', 'digital', 'consulting', 'animation',],
     recordHistory: false,
+    animateAnchor: false,
     //scrollHorizontally: false,
     //slideSelector: '.horizontal-scrolling',
 
@@ -87,7 +88,13 @@ $(document).ready(function() {
       }
       
     },
-    afterRender: function(){
+    afterRender: function() {
+      setTimeout(function() {
+        $('#startoverlay').animate({opacity: 0}, 200, function() {
+          $('#startoverlay').css({display: 'none'});
+        });
+
+      }, 300)
       //$('body').bind('touchmove', function(e){e.preventDefault()}); 
     }
   });
