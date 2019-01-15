@@ -331,6 +331,75 @@ $(document).ready(function() {
     disableAutoplay();
   });*/
 
+  var video0 = $('#video_0'),
+      video1 = $('#video_1'),
+      video2 = $('#video_2'),
+      video3 = $('#video_3'),
+      video4 = $('#video_4'),
+      video5 = $('#video_5');
+
+  var playPromise = video0[0].play();
+
+  if (playPromise !== undefined) {
+      playPromise.then(function (_) {
+          //video.pause();
+          video0[0].currentTime = 0;
+          video0[0].play();
+      }).catch(function (error) {});
+  }
+
+  var video1 = $('#video_1');
+
+  var playPromise = video1[0].play();
+
+  if (playPromise !== undefined) {
+      playPromise.then(function (_) {
+          //video.pause();
+          video1[0].currentTime = 0;
+          video1[0].play();
+      }).catch(function (error) {});
+  }
+
+  var playPromise = video2[0].play();
+
+  if (playPromise !== undefined) {
+      playPromise.then(function (_) {
+          //video.pause();
+          video2[0].currentTime = 0;
+          video2[0].play();
+      }).catch(function (error) {});
+  }
+
+  var playPromise = video3[0].play();
+
+  if (playPromise !== undefined) {
+      playPromise.then(function (_) {
+          //video.pause();
+          video3[0].currentTime = 0;
+          video3[0].play();
+      }).catch(function (error) {});
+  }
+
+  var playPromise = video4[0].play();
+
+  if (playPromise !== undefined) {
+      playPromise.then(function (_) {
+          //video.pause();
+          video4[0].currentTime = 0;
+          video4[0].play();
+      }).catch(function (error) {});
+  }
+
+  var playPromise = video5[0].play();
+
+  if (playPromise !== undefined) {
+      playPromise.then(function (_) {
+          //video.pause();
+          video5[0].currentTime = 0;
+          video5[0].play();
+      }).catch(function (error) {});
+  }
+
 
   $('.mail').on('click', function() {
     $('.mail-hidden').css({display:'block'}).animate({opacity: 1}, 200);
