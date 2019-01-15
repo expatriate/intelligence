@@ -612,82 +612,37 @@ $(document).ready(function() {
 
   $(document).on('click', 'a', function(e) {
     if ($(e.target).hasClass('menu-link') && !$(e.target).hasClass('menu-link__contacts')) {
-
-      /*setTimeout(function() {
-        if ($.fn.fullpage.getActiveSection().index !== 7) {
-          $.fn.fullpage.setAllowScrolling(true);
-          $('.mouse').show();
-        }
-      }, 500)*/
     }
   });
   
   if ($(window).width() > 1024) {
-    //stickyElements('.menu-hidden__close, .mail-hidden__close, .menu, .mail, .share', {stickiness: 5});
     $('.js-animate-show, .twitter-link__container').addClass('not-animated');
     $('.section-title__image:not(.no-a)').addClass('not-animated-opacity');
-
-    /*$(window).on('mouseover', mouseOver);
-    $(window).on('mouseout', mouseOut);
-    $(window).on('mousemove', moveCursor);*/
   }
 
-  //init();
+  $('.menu-link').on('mouseenter', function() {
+    
+    var $prev = $('.inactive');
+    
 
-  //methods
-  //$.fn.fullpage.setAllowScrolling(false);
+    var $el = $('#' + $(this).data('img'));
+    $el.css({top: 50, opacity: 0, display: 'block'}).animate({top: 0, opacity: 1}, 300).addClass('active');
+  });
+  $('.menu-link').on('mouseout', function() {
+    
+    var $el = $('#' + $(this).data('img')).addClass('inactive').removeClass('active');
+    $el.animate({top: -50, opacity: 0}, 200, function() {$(this).removeAttr('style').removeClass('inactive');})
+  });
+
+  var previewLeft = parseInt($('#js-menu-preview').css('left').replace('px'));
+  var previewTop = parseInt($('#js-menu-preview').css('top').replace('px'));
+  $('.menu-hidden__items').on('mousemove', function(e) {
+    var left = e.offsetX;
+    var top = e.offsetY;
+    //$('#js-menu-preview').clearQueue();
+    //$('#js-menu-preview').animate({top: top/5 + previewTop/100*$(window).height(), left: left/14 + previewLeft/100*$(window).width()}, 20);
+    //console.log(e.offsetY);
+  })  
+
 
 });
-
-/*var $cursor = $('.follower');
-var isEdEgde = Swiper.browser.isIE || Swiper.browser.isEdge ? true : false;
-if (isEdEgde) {
-  $('html').addClass('is-ie is-edge');
-}
-var topoffset;
-function moveCursor(e) {
-  TweenLite.to($cursor, 0.23, {
-    left: e.pageX,
-    top: e.pageY,
-    ease: Power4.easOut
-  });
-}
-function mouseOver(e) {
-  if ($(e.target).hasClass('hoverable')) {
-    $cursor.addClass('is-hidden');
-  }
-}
-function mouseOut(e) {
-  if ($(e.target).hasClass('hoverable')) {
-    if (!$(e.target).parents('svg').length && !$(e.relatedTarget).parents('svg').length) {
-      $cursor.removeClass('is-hidden');
-    }
-  }
-}*/
-
-
-/*
-function onMouseMove( event ) {
-  mouse.x = ( ( event.clientX - webGLRenderer.domElement.offsetLeft ) / webGLRenderer.domElement.width ) * 2 - 1;
-  mouse.y = - ( ( event.clientY - webGLRenderer.domElement.offsetTop ) / webGLRenderer.domElement.height ) * 2 + 1;
-  var vector = new THREE.Vector3(mouse.x, mouse.y, 0.5);
-  vector.unproject(camera);
-
-  raycaster = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize());
-  intersects = raycaster.intersectObject( mesh );
-
-  raycaster.setFromCamera( mouse, camera );
-  if ( intersects.length > 0 ) {
-    intersectionPt.vertices[0] = intersects[0].point;
-    intersectionPt.verticesNeedUpdate = true;
-    
-  }
-}
-
-function onMouseDown( event ) {
-  mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
-  mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;   
-
-}
-function onWindowResize() {
-}*/
