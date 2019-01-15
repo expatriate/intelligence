@@ -1,3 +1,5 @@
+'use strict'
+
 var directionSlider, productSlider, newsSlider, maxOpened = 0, menuOpened = false, portfolioOpened = false;
 var resizeTimer;
 
@@ -53,6 +55,7 @@ $(document).ready(function() {
 
   $('#fullpage').fullpage({
     //menu: '#menu',
+    //css3: false,
     //keyboardScrolling: false,
     fixedElements: '#header, #footer, .mail, .share, .follower, #startoverlay',
     licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
@@ -64,8 +67,10 @@ $(document).ready(function() {
 
     onLeave: function(origin, destination, direction) {
 
-      var idx = Math.abs(origin - destination)*.1;
-      $.fn.fullpage.setScrollingSpeed(idx*700);
+      /*var idx = Math.abs(origin - destination)*.1;
+      if ($.fn.fullpage) {
+        $.fn.fullpage.setScrollingSpeed(idx*700);
+      }*/
 
 
       if (!destination.isFirst) {
@@ -97,11 +102,12 @@ $(document).ready(function() {
       }, 300)
       //$('body').bind('touchmove', function(e){e.preventDefault()}); 
     }
-  });
+  });//.setScrollingSpeed(0);
 
   // Disable default scrolling
   $.fn.fullpage.setMouseWheelScrolling(false);
   $.fn.fullpage.setAllowScrolling(false);
+  $.fn.fullpage.setScrollingSpeed(0);
 
   /*var customHeight = $(window).height();
   var windowWidth = $(window).width();
@@ -112,11 +118,11 @@ $(document).ready(function() {
 
   $('#stage').css({width: customHeight, height: customHeight});*/
 
-  objectFit.polyfill({
+ /* objectFit.polyfill({
     selector: 'video', // this can be any CSS selector
     fittype: 'cover', // either contain, cover, fill or none
     disableCrossDomain: 'true' // either 'true' or 'false' to not parse external CSS files.
-  });
+  });*/
 
   /*var configList = {
     "profile": {"screenName": tweeterLink},

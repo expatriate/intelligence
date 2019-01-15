@@ -1,12 +1,16 @@
 
 @font-face {
     font-family: FuturaMedium;
-    src: url(../fonts/FuturaMediumC.ttf);
+    src: url(../fonts/FuturaMediumC.eot),
+        url(../fonts/FuturaMediumC.woff) format('woff'),
+        url(../fonts/FuturaMediumC.ttf) format('truetype');
 }
 
 @font-face {
     font-family: FuturaBold;
-    src: url(../fonts/futura-bold.ttf);
+    src: url(../fonts/futura-bold.eot),
+        url(../fonts/futura-bold.woff) format('woff'),
+        url(../fonts/futura-bold.ttf) format('truetype');
 }
 
 @font-face {
@@ -16,5 +20,7 @@
 
 @font-face {
     font-family: OpenSansLight;
-    src: url(../fonts/2209.ttf);
+    src: url(../fonts/opensanslight.eot),
+        url(../fonts/opensanslight.woff) format('woff'),
+        url(../fonts/open-sans-light.ttf) format('truetype');
 }

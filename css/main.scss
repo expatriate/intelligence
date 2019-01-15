@@ -884,7 +884,7 @@ body, html {
   padding-bottom: 2px;
 }
 .section-title {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   position: relative;
 
   @media screen and (min-width: 1024px) and (max-width: 1400px) {
@@ -1127,6 +1127,10 @@ body, html {
 
   &--pad-bot {
     padding-bottom: 36px;
+
+    @media screen and (max-height: 500px) {
+      padding-bottom: 12px;
+    }
   }
 }
 
@@ -1170,6 +1174,12 @@ body, html {
     }
     @media screen and (max-width: 720px) and (max-height: 500px) {
     }
+    @media screen and (max-height: 600px) {
+      font-size: 20px;
+      &:after {
+        height: 1px;
+      }
+    }
   }
 
   @media screen and (min-width: 1024px) and (max-width: 1366px) {
@@ -1177,6 +1187,9 @@ body, html {
   }
   @media screen and (max-width: 720px) {
     bottom: 50px;
+  }
+  @media screen and (max-height: 600px) {
+    bottom: 80px;
   }
 }
 
@@ -1292,6 +1305,9 @@ body, html {
 
   .section__wrapper {
     @media screen and (min-width: 1024px) and (max-width: 1366px) {
+      padding: 40px 120px 40px 80px;
+    }
+    @media screen and (min-width: 1366px) and (max-width: 1800px) and (max-height: 500px) {
       padding: 40px 120px 40px 80px;
     }
   }
@@ -1460,9 +1476,9 @@ body, html {
   margin-bottom: 80px;
   margin-top:60px;
 
-  @media screen and (min-width: 1024px) and (max-width: 1400px) {
-    margin-bottom: 48px;
-    margin-top:36px;
+  @media screen and (min-width: 1024px) and (max-width: 1800px) {
+    margin-bottom: 24px;
+    margin-top:28px;
     input {
       font-size: 17px;
     }
@@ -1547,6 +1563,13 @@ body, html {
     }
     @media screen and (max-width: 720px) and (max-height: 500px) {
       height: 60px;
+    }
+    @media screen and (max-height: 500px) {
+      height: 60px;
+    }
+
+    @media screen and (max-height: 600px) {
+      height: 120px;
     }
 
     &.animated-top {
@@ -1682,6 +1705,9 @@ body, html {
     margin-top: 0px;
     height: 46vh;
   }
+  @media screen and (min-width: 1024px) and (max-height: 500px) {
+    height: 30vh;
+  }
 } 
 .swiper-wrapper {
   align-items: center;
@@ -1701,6 +1727,10 @@ body, html {
     background-color: #aabbaa;
 
     @media screen and (max-width: 720px) {
+      width: 48%;
+    }
+
+    @media screen and (min-width: 720px) and (max-width: 1200px) {
       width: 48%;
     }
 
@@ -1818,4 +1848,14 @@ body, html {
   z-index: 9999999;
   top: 0;
   left: 0;
+}
+
+.fp-section.fp-table, .fp-slide.fp-table {
+  display: block!important;
+}
+.fp-tableCell {
+  display: block!important;
+}
+.fp-easings {
+  transition: all 0s ease-out !important;
 }

@@ -370,11 +370,11 @@ th {
 
 @font-face {
   font-family: FuturaMedium;
-  src: url(../fonts/FuturaMediumC.ttf); }
+  src: url(../fonts/FuturaMediumC.eot), url(../fonts/FuturaMediumC.woff) format("woff"), url(../fonts/FuturaMediumC.ttf) format("truetype"); }
 
 @font-face {
   font-family: FuturaBold;
-  src: url(../fonts/futura-bold.ttf); }
+  src: url(../fonts/futura-bold.eot), url(../fonts/futura-bold.woff) format("woff"), url(../fonts/futura-bold.ttf) format("truetype"); }
 
 @font-face {
   font-family: OpenSans;
@@ -382,7 +382,7 @@ th {
 
 @font-face {
   font-family: OpenSansLight;
-  src: url(../fonts/2209.ttf); }
+  src: url(../fonts/opensanslight.eot), url(../fonts/opensanslight.woff) format("woff"), url(../fonts/open-sans-light.ttf) format("truetype"); }
 
 body, html {
   min-height: 100%; }
@@ -1158,7 +1158,7 @@ body, html {
   padding-bottom: 2px; }
 
 .section-title {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   position: relative; }
   @media screen and (min-width: 1024px) and (max-width: 1400px) {
     .section-title {
@@ -1366,6 +1366,9 @@ body, html {
     opacity: 0.7; }
   .section-text--pad-bot {
     padding-bottom: 36px; }
+    @media screen and (max-height: 500px) {
+      .section-text--pad-bot {
+        padding-bottom: 12px; } }
 
 .section-portfolio {
   position: absolute;
@@ -1401,12 +1404,20 @@ body, html {
     @media screen and (max-width: 720px) {
       .section-portfolio__link {
         font-size: 24px; } }
+    @media screen and (max-height: 600px) {
+      .section-portfolio__link {
+        font-size: 20px; }
+        .section-portfolio__link:after {
+          height: 1px; } }
   @media screen and (min-width: 1024px) and (max-width: 1366px) {
     .section-portfolio {
       bottom: 90px; } }
   @media screen and (max-width: 720px) {
     .section-portfolio {
       bottom: 50px; } }
+  @media screen and (max-height: 600px) {
+    .section-portfolio {
+      bottom: 80px; } }
 
 .place {
   display: block;
@@ -1500,6 +1511,9 @@ body, html {
 .mail-hidden {
   z-index: 100; }
   @media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .mail-hidden .section__wrapper {
+      padding: 40px 120px 40px 80px; } }
+  @media screen and (min-width: 1366px) and (max-width: 1800px) and (max-height: 500px) {
     .mail-hidden .section__wrapper {
       padding: 40px 120px 40px 80px; } }
 
@@ -1645,10 +1659,10 @@ body, html {
     @media screen and (max-width: 720px) {
       .inputs-wrapper input {
         font-size: 14px; } }
-  @media screen and (min-width: 1024px) and (max-width: 1400px) {
+  @media screen and (min-width: 1024px) and (max-width: 1800px) {
     .inputs-wrapper {
-      margin-bottom: 48px;
-      margin-top: 36px; }
+      margin-bottom: 24px;
+      margin-top: 28px; }
       .inputs-wrapper input {
         font-size: 17px; } }
   @media screen and (min-width: 720px) and (max-width: 1024px) {
@@ -1739,6 +1753,12 @@ body, html {
     @media screen and (max-width: 720px) and (max-height: 500px) {
       .textarea-wrapper textarea {
         height: 60px; } }
+    @media screen and (max-height: 500px) {
+      .textarea-wrapper textarea {
+        height: 60px; } }
+    @media screen and (max-height: 600px) {
+      .textarea-wrapper textarea {
+        height: 120px; } }
     .textarea-wrapper textarea.animated-top {
       -webkit-transform: translate(0, 50px);
               transform: translate(0, 50px);
@@ -1870,6 +1890,9 @@ body, html {
     .portfolio__wrapper {
       margin-top: 0px;
       height: 46vh; } }
+  @media screen and (min-width: 1024px) and (max-height: 500px) {
+    .portfolio__wrapper {
+      height: 30vh; } }
 
 .swiper-wrapper {
   -webkit-box-align: center;
@@ -1896,6 +1919,9 @@ body, html {
     margin-bottom: 5px;
     background-color: #aabbaa; }
     @media screen and (max-width: 720px) {
+      .swiper-grid__item {
+        width: 48%; } }
+    @media screen and (min-width: 720px) and (max-width: 1200px) {
       .swiper-grid__item {
         width: 48%; } }
     .swiper-grid__item img {
@@ -2001,3 +2027,13 @@ body, html {
   z-index: 9999999;
   top: 0;
   left: 0; }
+
+.fp-section.fp-table, .fp-slide.fp-table {
+  display: block !important; }
+
+.fp-tableCell {
+  display: block !important; }
+
+.fp-easings {
+  -webkit-transition: all 0s ease-out !important;
+  transition: all 0s ease-out !important; }
