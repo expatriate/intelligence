@@ -804,12 +804,6 @@ body, html {
       -webkit-flex-direction: row;
           -ms-flex-direction: row;
               flex-direction: row; }
-  @media screen and (min-width: 1400px) {
-    .section-menu, .section-d-menu, .section-black-menu {
-      padding-left: 200px; } }
-  @media screen and (min-width: 1024px) and (max-width: 1400px) {
-    .section-menu, .section-d-menu, .section-black-menu {
-      padding-left: 100px; } }
 
 .section-black {
   background-color: #000000; }
@@ -1554,9 +1548,15 @@ body, html {
     .menu-hidden__menu img {
       display: none; } }
 
-@media screen and (max-width: 720px) {
-  .menu-hidden__items {
-    /* position: relative;
+.menu-hidden__items {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 20%; }
+  @media screen and (max-width: 720px) {
+    .menu-hidden__items {
+      /* position: relative;
       top: auto;
       left: auto;
       right: auto;
@@ -2042,16 +2042,25 @@ body, html {
   transition: all 0s ease-out !important; }
 
 .menu-preview {
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 600px;
   position: absolute;
-  left: 30%;
-  top: 5%;
+  right: 0;
+  top: 0;
   z-index: -1;
   overflow: hidden; }
   @media screen and (max-width: 720px) {
     .menu-preview {
       display: none; } }
+  @media screen and (min-width: 1400px) {
+    .menu-preview {
+      right: 8%; } }
+  @media screen and (min-width: 1400px) and (max-width: 1800px) {
+    .menu-preview {
+      right: 9%; } }
+  @media screen and (min-width: 1801px) {
+    .menu-preview {
+      right: 10%; } }
   .menu-preview:after {
     content: '';
     position: absolute;

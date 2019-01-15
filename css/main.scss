@@ -485,12 +485,6 @@ body, html {
   }
 
   &-menu {
-    @media screen and (min-width: 1400px) {
-      padding-left: 200px;
-    }
-    @media screen and (min-width: 1024px) and (max-width: 1400px) {
-      padding-left: 100px;
-    }
   }
 
   &-details {
@@ -1352,6 +1346,10 @@ body, html {
 
   &__items {
 
+    align-items: center;
+    margin-right: 20%;
+
+
     @media screen and (max-width: 720px) {
       /* position: relative;
       top: auto;
@@ -1865,17 +1863,27 @@ body, html {
 
 
 .menu-preview {
-  width: 500px;
-  height: 500px;
+  width: 450px;
+  height: 600px;
   position: absolute;
-  left: 30%;
-  top: 5%;
+  right: 0;
+  top: 0;
   z-index: -1;
   overflow: hidden;
 
 
   @media screen and (max-width: 720px) {
     display: none;
+  }
+
+  @media screen and (min-width: 1400px) {
+    right: 8%;
+  }
+  @media screen and (min-width: 1400px) and (max-width: 1800px) {
+    right: 9%;
+  }
+  @media screen and (min-width: 1801px) {
+    right: 10%;
   }
 
   &:after {
