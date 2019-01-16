@@ -573,7 +573,7 @@ body, html {
 
 .mail {
   position: absolute;
-  z-index: 999;
+  z-index: 99;
   top: 60px;
   right: 110px;
   border-radius: 100%;
@@ -1479,12 +1479,15 @@ body, html {
     color: #ffffff;
     cursor: pointer;
     position: absolute;
-    right: -70px;
-    top: 0px;
+    right: 0px;
+    top: -60px;
     padding: 25px; }
     @media screen and (min-width: 720px) and (max-width: 1024px) {
       .mail-hidden__close, .menu-hidden__close, .portfolio-hidden__close {
         right: 0px; } }
+    @media screen and (min-width: 1025px) and (max-width: 1366px) {
+      .mail-hidden__close, .menu-hidden__close, .portfolio-hidden__close {
+        top: -30px; } }
     @media screen and (max-width: 720px) {
       .mail-hidden__close, .menu-hidden__close, .portfolio-hidden__close {
         right: -10px;
@@ -1512,8 +1515,8 @@ body, html {
       padding: 40px 120px 40px 80px; } }
 
 .menu-hidden__close {
-  right: 70px;
-  top: -70px; }
+  right: 0px;
+  top: 60px; }
   @media screen and (max-width: 720px) {
     .menu-hidden__close {
       display: none; } }

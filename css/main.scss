@@ -208,7 +208,7 @@ body, html {
 
 .mail {
   position: absolute;
-  z-index: 999;
+  z-index: 99;
   top: 60px;
   right: 110px;
   border-radius: 100%;
@@ -1262,12 +1262,15 @@ body, html {
     color: #ffffff;
     cursor: pointer;
     position: absolute;
-    right: -70px;
-    top: 0px;
+    right: 0px;
+    top: -60px;
     padding: 25px;
     //transition: all .5s ease;
     @media screen and (min-width: 720px) and (max-width: 1024px) {
       right: 0px;
+    }
+    @media screen and (min-width: 1025px) and (max-width: 1366px) {
+      top: -30px;
     }
     @media screen and (max-width: 720px) {
       right: -10px;
@@ -1284,6 +1287,7 @@ body, html {
     }
   }
 }
+
 
 .portfolio-hidden {
   z-index: 99;
@@ -1309,8 +1313,8 @@ body, html {
 
 .menu-hidden {
   &__close {
-    right: 70px;
-    top: -70px;
+    right: 0px;
+    top: 60px;
     @media screen and (max-width: 720px) {
       display: none;
     }

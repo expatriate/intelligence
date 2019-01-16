@@ -268,7 +268,7 @@ $(document).ready(function() {
     $('.menu').removeClass('opened');
   });
 
-  $('.menu-hidden__items').on('click', function() {
+  $('.menu-link').on('click', function() {
     $('#menu').click();
   });
 
