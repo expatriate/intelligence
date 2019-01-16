@@ -2017,11 +2017,10 @@ body, html {
   bottom: -20px !important; }
 
 .swiper-scrollbar-drag {
-  height: 0px !important;
-  background: none !important;
-  top: 0px !important;
-  position: relative; }
-  .swiper-scrollbar-drag:after {
+  height: 7px !important;
+  background: #ffffff !important;
+  top: -3px !important;
+  /* &:after {
     content: '';
     position: absolute;
     width: 16px;
@@ -2029,7 +2028,8 @@ body, html {
     border-radius: 10px;
     background-color: #ffffff;
     left: 50%;
-    top: -7px; }
+    top:-7px;
+  } */ }
 
 .js-animate-show-submit {
   cursor: pointer; }
