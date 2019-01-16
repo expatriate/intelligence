@@ -1831,10 +1831,22 @@ body, html {
   bottom: -20px!important;
 }
 .swiper-scrollbar-drag {
-  width: 10px!important;
-  height: 10px!important;
-  background-color: #ffffff!important;
-  top:-4px!important;
+  //width: 10px!important;
+  height: 0px!important;
+  background: none!important;
+  top:0px!important;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    left: 50%;
+    top:-7px;
+  }
 }
 
 .js-animate-show-submit {
