@@ -3,60 +3,52 @@
 var directionSlider, productSlider, newsSlider, maxOpened = 0, menuOpened = false, portfolioOpened = false;
 var resizeTimer;
 
+function loadSwiperImages() {
+  var images = ['designImages', 'consultingImages', 'digitalImages', 'codingImages', 'animationImages'];
 
-$(document).ready(function() {
+  images.forEach(function(item) {
 
+    var name = item.replace('Images', '');
+    var container = $('.' + name + 'portfolio').find('.swiper-wrapper');
 
-  $('#fullpage').fullpage({
-    //menu: '#menu',
-    //css3: false,
-    //keyboardScrolling: false,
-    fixedElements: '#header, #footer, .mail, .share, .follower, #startoverlay',
-    licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-    anchors:['main', 'design', 'coding', 'digital', 'consulting', 'animation',],
-    recordHistory: false,
-    animateAnchor: false,
-    //scrollHorizontally: false,
-    //slideSelector: '.horizontal-scrolling',
+    if (window[item] && window[item].length) {
 
-    onLeave: function(origin, destination, direction) {
+      var big = true, smallCounter = 0;
+      var content = '', tempcontent = '';
+      for (var i = 0; i < window[item].length; i++) {
 
-      if (!destination.isFirst) {
-        $('.go-to-main-image').hide();
-        if (!$('.go-to-main-text').is(':visible')) {
-          $('.go-to-main-text').css({display: 'block', opacity: 0}).animate({opacity: 1}, 500);
-          $('#menu').css({opacity: 0, visibility: 'visible'}).animate({opacity: 1}, 500).removeAttr('style');
-        }
-      } else {
-        $('#menu').css({'visibility': 'hidden'});
-        $('.go-to-main-text').hide();
-        if (!$('.go-to-main-image').is(':visible')) {
-          $('.go-to-main-image').css({display: 'block', opacity: 0}).animate({opacity: 1}, 500);
+        // Add big slide
+        if (big) {
+          content += '<div class="swiper-slide">' +
+                        '<div class="swiper-slide__big">' +
+                            '<img src="img/' + name + '/' + window[item][i] + '">' +
+                          '</div>' +
+                      '</div>';
+          big = false;
+        } else {
+          // Add 4 small slides
+          tempcontent += '<div class="swiper-grid__item">' +
+                            '<img src="img/' + name + '/' + window[item][i] + '">' +
+                          '</div>';
+          smallCounter ++;
+          if (smallCounter == 4) {
+            content += '<div class="swiper-slide">' +
+                              '<div class="swiper-grid">' +
+                                tempcontent + 
+                              '</div>' +
+                            '</div>';
+            smallCounter = 0;
+            tempcontent = '';
+            big = true;
+          }
         }
       }
-
-      var portfolioOpened = $('body').find('.portfolio-hidden:visible');
-      if (portfolioOpened.length) {
-        portfolioOpened.find('.section-portfolio__close').click();
-      }
-      
-    },
-    afterRender: function() {
-      setTimeout(function() {
-        $('#startoverlay').animate({opacity: 0}, 200, function() {
-          $('#startoverlay').css({display: 'none'});
-        });
-
-      }, 300)
+      container.html(content);
     }
   });
+}
 
-  // Disable default scrolling
-  $.fn.fullpage.setMouseWheelScrolling(false);
-  $.fn.fullpage.setAllowScrolling(false);
-  $.fn.fullpage.setScrollingSpeed(0);
-
-
+function loadVideos() {
   var video0 = $('#video_0'),
       video1 = $('#video_1'),
       video2 = $('#video_2'),
@@ -126,6 +118,65 @@ $(document).ready(function() {
       }).catch(function (error) {});
   }
 
+}
+
+$(document).ready(function() {
+
+
+  $('#fullpage').fullpage({
+    //menu: '#menu',
+    //css3: false,
+    //keyboardScrolling: false,
+    fixedElements: '#header, #footer, .mail, .share, .follower, #startoverlay',
+    licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
+    anchors:['main', 'design', 'coding', 'digital', 'consulting', 'animation',],
+    recordHistory: false,
+    animateAnchor: false,
+    //scrollHorizontally: false,
+    //slideSelector: '.horizontal-scrolling',
+
+    onLeave: function(origin, destination, direction) {
+
+      if (!destination.isFirst) {
+        $('.go-to-main-image').hide();
+        if (!$('.go-to-main-text').is(':visible')) {
+          $('.go-to-main-text').css({display: 'block', opacity: 0}).animate({opacity: 1}, 500);
+          $('#menu').css({opacity: 0, visibility: 'visible'}).animate({opacity: 1}, 500).removeAttr('style');
+        }
+      } else {
+        $('#menu').css({'visibility': 'hidden'});
+        $('.go-to-main-text').hide();
+        if (!$('.go-to-main-image').is(':visible')) {
+          $('.go-to-main-image').css({display: 'block', opacity: 0}).animate({opacity: 1}, 500);
+        }
+      }
+
+      var portfolioOpened = $('body').find('.portfolio-hidden:visible');
+      if (portfolioOpened.length) {
+        portfolioOpened.find('.section-portfolio__close').click();
+      }
+      
+    },
+    afterRender: function() {
+      setTimeout(function() {
+        $('#startoverlay').animate({opacity: 0}, 200, function() {
+          $('#startoverlay').css({display: 'none'});
+        });
+
+      }, 300)
+    }
+  });
+
+  // Disable default scrolling
+  $.fn.fullpage.setMouseWheelScrolling(false);
+  $.fn.fullpage.setAllowScrolling(false);
+  $.fn.fullpage.setScrollingSpeed(0);
+
+  // Loading videos
+  loadVideos();
+
+  // Loading images
+  loadSwiperImages();
 
   $('.mail').on('click', function() {
     $('.mail-hidden').css({display:'block'}).animate({opacity: 1}, 200);
@@ -341,13 +392,4 @@ $(document).ready(function() {
     var $el = $('#' + $(this).data('img')).addClass('inactive').removeClass('active');
     $el.animate({top: -50, opacity: 0}, 200, function() {$(this).removeAttr('style').removeClass('inactive');})
   });
-
-  var previewLeft = parseInt($('#js-menu-preview').css('left').replace('px'));
-  var previewTop = parseInt($('#js-menu-preview').css('top').replace('px'));
-  $('.menu-hidden__items').on('mousemove', function(e) {
-    var left = e.offsetX;
-    var top = e.offsetY;
-  })  
-
-
 });
