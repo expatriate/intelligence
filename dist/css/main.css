@@ -1178,7 +1178,8 @@ body, html {
         font-size: 14px;
         margin: 1px 0px 0px 0px;
         position: absolute;
-        top: 30px; } }
+        top: 30px;
+        left: 0px; } }
     @media screen and (min-width: 1024px) and (min-height: 450px) {
       .section-title__subtext {
         font-size: 18px; } }
