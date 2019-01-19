@@ -47,6 +47,10 @@ body, html {
     img, svg {
       width: 100px;
     }
+
+    &.no-main {
+      left: -10px;
+    }
   }
 }
 
@@ -63,6 +67,8 @@ body, html {
     left: 90px;
   }
   @media screen and (max-width: 720px) {
+    left: 20px;
+    bottom: 28px;
   }
 
   .copy {
@@ -70,6 +76,11 @@ body, html {
     font-size: 20px;
     color: #ffffff;
     margin-top: 16px;
+
+    @media screen and (max-width: 720px) {
+      font-size: 14px;
+      margin-top: 0px;
+    }
   }
 }
 
@@ -188,7 +199,7 @@ body, html {
     height: 24px;
     &__inside {
       width: 24px;
-      top: 8px;
+      top: 20px;
        &:after {
         width: 24px;
         top: -8px;
@@ -242,18 +253,24 @@ body, html {
   bottom: 50px;
   right: 110px;
 
-  font-family: 'FuturaMedium';
-  font-size: 20px;
-  color: #ffffff;
+  a {
+    font-family: 'FuturaMedium';
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+
 
   border-radius: 100%;
   padding: 8px 14px 8px 12px;
   @media screen and (max-width: 720px) {
-    right: 114px;
-    bottom:auto;
-    padding: 0px;
-    top: 32px;
-    font-size: 13px;
+    bottom: 20px;
+    right: 20px;
+    padding: 8px 0px;
+    a {
+      font-size: 14px;
+    }
   }
   @media screen and (min-width: 720px) and (max-width: 1024px) {
     right: 200px;
@@ -1180,13 +1197,13 @@ body, html {
   }
 
   @media screen and (min-width: 1024px) and (max-width: 1366px) {
-    bottom: 90px;
+    bottom: 100px;
   }
   @media screen and (max-width: 720px) {
-    bottom: 50px;
+    bottom: 70px;
   }
   @media screen and (max-height: 600px) {
-    bottom: 80px;
+    bottom: 90px;
   }
 }
 
@@ -1401,6 +1418,8 @@ body, html {
 .go-to-main-image {
   @media screen and (max-width: 720px) {
     position: absolute;
+    left: 40px;
+    top: -12px;
   }
 }
 
@@ -1416,8 +1435,16 @@ body, html {
     color: #ffffff
   }
 
+  font-size: 24px;
+  margin-left:12px;
+
+  @media screen and (max-width: 1024px) {
+    font-size: 14px;
+    margin-left: 6px;
+  }
   @media screen and (max-width: 720px) {
     font-size: 12px;
+    margin-left: 62px;
   }
 }
 .menu-link {
@@ -1651,8 +1678,8 @@ body, html {
 
 .thankyou_message {
   h2 {
-    font-size: 36px;
-    font-family: 'LatoRegular';
+    font-size: 18px;
+    font-family: 'FuturaBold';
   }
 }
 
@@ -1693,6 +1720,16 @@ body, html {
   @media screen and (max-width: 768px) {
     width: auto;
     height: 100%;
+  }
+
+  &.vertical {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  &.horizontal {
+    width: auto!important;
+    height: 100%!important;
   }
 }
 
@@ -1762,7 +1799,6 @@ body, html {
   &__big {
     width: 100%;
     height: 100%;
-    background-color: #afafaf;
 
     img {
       height: 100%;
@@ -1830,6 +1866,17 @@ body, html {
   }
   &.clear {
     background-color: rgba(160,29,33,1);
+  }
+}
+
+.swiper-slide__last {
+  background-color: #ffffff;
+
+  img {
+    height: 100%;
+    width: 100%;
+
+    object-fit: contain;
   }
 }
 .swiper-scrollbar {

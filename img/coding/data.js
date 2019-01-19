@@ -3,6 +3,5 @@ window.codingImages = [
   'coding2.jpg', 
   'coding3.jpg',
   'coding4.jpg',
-  'coding5.jpg',
-  'coding6.jpg'
+  'coding5.jpg'
 ];

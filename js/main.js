@@ -11,27 +11,46 @@ function loadSwiperImages() {
     var name = item.replace('Images', '');
     var container = $('.' + name + 'portfolio').find('.swiper-wrapper');
 
+    window[item].push('behance-button.jpg');
+    var content = '', tempcontent = '';
+
     if (window[item] && window[item].length) {
 
       var big = true, smallCounter = 0;
-      var content = '', tempcontent = '';
+      
       for (var i = 0; i < window[item].length; i++) {
 
         // Add big slide
         if (big) {
-          content += '<div class="swiper-slide">' +
-                        '<div class="swiper-slide__big">' +
-                            '<img src="img/' + name + '/' + window[item][i] + '">' +
-                          '</div>' +
-                      '</div>';
-          big = false;
+          if (i != window[item].length - 1) {
+            content += '<div class="swiper-slide">' +
+                          '<div class="swiper-slide__big">' +
+                              '<img src="img/' + name + '/' + window[item][i] + '">' +
+                            '</div>' +
+                        '</div>';
+            big = false;
+          } else {
+            content += '<div class="swiper-slide swiper-slide__last">' +
+                          '<div class="swiper-slide__big">' +
+                              '<a href="https://www.behance.net/KsushaBleskina" itle="Behance"><img src="img/' + window[item][i] + '"></a>' +
+                            '</div>' +
+                        '</div>';
+            big = false;
+          }
         } else {
           // Add 4 small slides
-          tempcontent += '<div class="swiper-grid__item">' +
-                            '<img src="img/' + name + '/' + window[item][i] + '">' +
-                          '</div>';
+          if (i != window[item].length - 1) {
+            tempcontent += '<div class="swiper-grid__item">' +
+                              '<img src="img/' + name + '/' + window[item][i] + '">' +
+                            '</div>';
+          } else {
+            tempcontent += '<div class="swiper-grid__item swiper-slide__last">' +
+                              '<a href="https://www.behance.net/KsushaBleskina" title="Behance"><img src="img/' + window[item][i] + '"></a>' +
+                            '</div>';
+          }
+
           smallCounter ++;
-          if (smallCounter == 4) {
+          if (smallCounter == 4 || window[item].length == i+1) {
             content += '<div class="swiper-slide">' +
                               '<div class="swiper-grid">' +
                                 tempcontent + 
@@ -43,8 +62,8 @@ function loadSwiperImages() {
           }
         }
       }
-      container.html(content);
     }
+    container.html(content);
   });
 }
 
@@ -120,7 +139,22 @@ function loadVideos() {
 
 }
 
+$(window).on('resize', function() {
+  if ($(window).width() > $(window).height()) {
+    $('.videobg').addClass('vertical').removeClass('horizontal');
+  } else {
+    $('.videobg').addClass('horizontal').removeClass('vertical');
+  }
+})
+
 $(document).ready(function() {
+
+
+  if ($(window).width() > $(window).height()) {
+    $('.videobg').addClass('vertical').removeClass('horizontal');
+  } else {
+    $('.videobg').addClass('horizontal').removeClass('vertical');
+  }
 
 
   $('#fullpage').fullpage({
@@ -138,14 +172,16 @@ $(document).ready(function() {
     onLeave: function(origin, destination, direction) {
 
       if (!destination.isFirst) {
-        $('.go-to-main-image').hide();
+        /*$('.go-to-main-image').hide();
         if (!$('.go-to-main-text').is(':visible')) {
           $('.go-to-main-text').css({display: 'block', opacity: 0}).animate({opacity: 1}, 500);
-          $('#menu').css({opacity: 0, visibility: 'visible'}).animate({opacity: 1}, 500).removeAttr('style');
-        }
+        }*/
+        $('#header').removeClass('no-main');
+        $('#menu').css({opacity: 0, visibility: 'visible'}).animate({opacity: 1}, 500).removeAttr('style');
       } else {
         $('#menu').css({'visibility': 'hidden'});
-        $('.go-to-main-text').hide();
+        $('#header').addClass('no-main');
+        //$('.go-to-main-text').hide();
         if (!$('.go-to-main-image').is(':visible')) {
           $('.go-to-main-image').css({display: 'block', opacity: 0}).animate({opacity: 1}, 500);
         }

@@ -444,7 +444,9 @@ body, html {
       left: 30px;
       top: 30px; }
       #header img, #header svg {
-        width: 100px; } }
+        width: 100px; }
+      #header.no-main {
+        left: -10px; } }
 
 #footer {
   position: absolute;
@@ -457,11 +459,19 @@ body, html {
   @media screen and (min-width: 720px) and (max-width: 1024px) {
     #footer {
       left: 90px; } }
+  @media screen and (max-width: 720px) {
+    #footer {
+      left: 20px;
+      bottom: 28px; } }
   #footer .copy {
     font-family: 'FuturaMedium';
     font-size: 20px;
     color: #ffffff;
     margin-top: 16px; }
+    @media screen and (max-width: 720px) {
+      #footer .copy {
+        font-size: 14px;
+        margin-top: 0px; } }
 
 .menu {
   left: 90px;
@@ -561,7 +571,7 @@ body, html {
       height: 24px; }
       .menu__inside {
         width: 24px;
-        top: 8px; }
+        top: 20px; }
         .menu__inside:after {
           width: 24px;
           top: -8px; }
@@ -605,9 +615,6 @@ body, html {
   z-index: 999;
   bottom: 50px;
   right: 110px;
-  font-family: 'FuturaMedium';
-  font-size: 20px;
-  color: #ffffff;
   border-radius: 100%;
   padding: 8px 14px 8px 12px;
   /* @media screen and (min-width: 1024px) {
@@ -616,13 +623,18 @@ body, html {
         background-color: #efefef;
     }
   } */ }
+  .share a {
+    font-family: 'FuturaMedium';
+    font-size: 20px;
+    color: #ffffff;
+    text-decoration: none; }
   @media screen and (max-width: 720px) {
     .share {
-      right: 114px;
-      bottom: auto;
-      padding: 0px;
-      top: 32px;
-      font-size: 13px; } }
+      bottom: 20px;
+      right: 20px;
+      padding: 8px 0px; }
+      .share a {
+        font-size: 14px; } }
   @media screen and (min-width: 720px) and (max-width: 1024px) {
     .share {
       right: 200px;
@@ -1410,13 +1422,13 @@ body, html {
           height: 1px; } }
   @media screen and (min-width: 1024px) and (max-width: 1366px) {
     .section-portfolio {
-      bottom: 90px; } }
+      bottom: 100px; } }
   @media screen and (max-width: 720px) {
     .section-portfolio {
-      bottom: 50px; } }
+      bottom: 70px; } }
   @media screen and (max-height: 600px) {
     .section-portfolio {
-      bottom: 80px; } }
+      bottom: 90px; } }
 
 .place {
   display: block;
@@ -1599,7 +1611,9 @@ body, html {
 
 @media screen and (max-width: 720px) {
   .go-to-main-image {
-    position: absolute; } }
+    position: absolute;
+    left: 40px;
+    top: -12px; } }
 
 .go-to-main-text {
   -ms-touch-action: none;
@@ -1607,12 +1621,19 @@ body, html {
   display: inline-block;
   color: #ffffff;
   text-decoration: none;
-  font-family: 'FuturaMedium'; }
+  font-family: 'FuturaMedium';
+  font-size: 24px;
+  margin-left: 12px; }
   .go-to-main-text:hover, .go-to-main-text:active, .go-to-main-text:visited {
     color: #ffffff; }
+  @media screen and (max-width: 1024px) {
+    .go-to-main-text {
+      font-size: 14px;
+      margin-left: 6px; } }
   @media screen and (max-width: 720px) {
     .go-to-main-text {
-      font-size: 12px; } }
+      font-size: 12px;
+      margin-left: 62px; } }
 
 .menu-link {
   text-decoration: none;
@@ -1845,8 +1866,8 @@ body, html {
   cursor: none; }
 
 .thankyou_message h2 {
-  font-size: 36px;
-  font-family: 'LatoRegular'; }
+  font-size: 18px;
+  font-family: 'FuturaBold'; }
 
 .not-animated {
   -webkit-transform: translateY(150%);
@@ -1885,6 +1906,12 @@ body, html {
     .videobg {
       width: auto;
       height: 100%; } }
+  .videobg.vertical {
+    width: 100% !important;
+    height: auto !important; }
+  .videobg.horizontal {
+    width: auto !important;
+    height: 100% !important; }
 
 @media screen and (min-width: 1024px) {
   #video_5 {
@@ -1959,8 +1986,7 @@ body, html {
   position: relative; }
   .swiper-slide__big {
     width: 100%;
-    height: 100%;
-    background-color: #afafaf; }
+    height: 100%; }
     .swiper-slide__big img {
       height: 100%;
       width: 100%;
@@ -2015,6 +2041,13 @@ body, html {
       opacity: 1; }
   .swiper-slide.clear {
     background-color: #a01d21; }
+
+.swiper-slide__last {
+  background-color: #ffffff; }
+  .swiper-slide__last img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain; }
 
 .swiper-scrollbar {
   background: rgba(255, 255, 255, 0.8) !important;
